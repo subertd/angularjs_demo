@@ -7,11 +7,22 @@
     <script src='js/app.js'></script>
   </head>
   <body>
-    <div ng-controller='DemoCtrl as demoCtrl'>
-      <form ng-submit='demoCtrl.demoSubmit()'>
-        <input type='text' ng-model='demoCtrl.demoModel.textField'>
+    <div ng-controller='DemoCtrl'>
+      <form ng-submit='demoSubmit()'>
+        <label>Alert Demonstration</label>
+        <input type='text' ng-model='demoModel.textField'>
         <button type='submit'>Submit</button>
       </form>
+      
+      <br>
+      
+      <div ng-controller='InnerCtrl'>
+        <label>Real Time Demonstration</label>
+        <form>
+          <input type='text' ng-model='innerModel.textField'>
+        </form>
+        <p>{{innerModel.textField}}</p>
+      </div>
     </div>
   </body>
 </html>
